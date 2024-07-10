@@ -1,0 +1,55 @@
+<div class="row div-img">
+  <img class="img-plato" src="{{ item.imagen }}" alt="" />
+</div>
+<div class="row titulo">
+  <h4 class="">{{ item.nombre }}</h4>
+</div>
+<div class="row descripcion">
+  <p class="">{{ item.descripcion }}</p>
+</div>
+<div class="row-1 precio">
+  <p class="">
+    Precio: <span>{{ item.precio }}€</span>
+  </p>
+</div>
+<div class="row-1 alergias">
+  <p class="alergias">
+    <span *ngFor="let alergia of item.alergias">
+      <img
+        class="alergia-icon"
+        *ngIf="alergia === 'Huevo'"
+        src=".../../../../assets/simbolo-alergeno-huevos.png"
+        alt="Huevo"
+      />
+      <img
+        class="alergia-icon"
+        *ngIf="alergia === 'Lácteos'"
+        src=".../../../../assets/simbolo-alergeno-lacteos.png"
+        alt="Lácteos"
+      />
+      <img
+        class="alergia-icon"
+        *ngIf="alergia === 'Crustaceo'"
+        src=".../../../../assets/simbolo-alergeno-crustaceo.png"
+        alt="Mariscos"
+      />
+      <img
+        class="alergia-icon"
+        *ngIf="alergia === 'Cereales'"
+        src=".../../../../assets/simbolo-alergeno-cereales.png"
+        alt="Gluten"
+      />
+      <img
+        class="alergia-icon"
+        *ngIf="alergia === 'Soja'"
+        src=".../../../../assets/simbolo-alergeno-soja.png"
+        alt="Soja"
+      />
+    </span>
+  </p>
+</div>
+<div class="div-boton">
+  <button (click)="agregarCarrito()" class="row-1 boton">
+    Añadir al carrito
+  </button>
+</div>

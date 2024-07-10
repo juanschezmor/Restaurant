@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=swap");
+html {
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+}
+h1 {
+  font-weight: bold;
+}
+h3 {
+  font-weight: 600;
+}
+h5 {
+  font-weight: 400;
+}
+.white-icon {
+  filter: invert(100%);
+  -webkit-filter: invert(100%);
+}
+/* Estilos para el contenedor del dropdown */
+.dropdown {
+  position: relative;
+  display: flex;
+}
+
+/* Estilos para el botón del dropdown */
+.dropbtn {
+  filter: invert(100%);
+  -webkit-filter: invert(100%);
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Estilos para el contenido del dropdown (inicialmente oculto) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px; /* Quita el ancho mínimo fijo */
+  right: 0; /* Alinea el lado derecho del dropdown content con el lado derecho del botón */
+
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Estilos para los enlaces dentro del dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Cambia el color del enlace cuando se pasa el ratón sobre él */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Muestra el dropdown cuando se pasa el ratón sobre el botón */
+.dropdown:hover .dropdown-content {
+  display: block;
+}

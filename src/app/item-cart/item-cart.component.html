@@ -1,0 +1,18 @@
+<div class="row p-2">
+  <div class="col-6">
+    <img class="img-plato img-fluid" src="{{ item.imagen }}" alt="" />
+  </div>
+  <div class="col-6">
+    <div class="row">
+      <h5>{{ item.nombre }}</h5>
+    </div>
+    <div class="row">
+      <p>Precio: {{ item.precio }}</p>
+    </div>
+    <div class="row">
+      <button (click)="onQuitarClick()" class="boton">
+        Quitar del carrito
+      </button>
+    </div>
+  </div>
+</div>

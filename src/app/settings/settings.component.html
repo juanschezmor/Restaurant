@@ -1,0 +1,45 @@
+<div class="container-settings pt-4 pb-3">
+  <div class="row d-flex justify-content-center align-items-center">
+    <div class="settings col-md-6">
+      <h3>Ajustes</h3>
+
+      <div class="form-group">
+        <label for="font-size">Tamaño de Fuente:</label>
+        <select
+          class="form-control"
+          id="font-size"
+          [(ngModel)]="selectedFontSize"
+        >
+          <option *ngFor="let option of fontSizeOptions">{{ option }}</option>
+        </select>
+      </div>
+
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="alto-contraste" />
+        <label class="form-check-label" for="alto-contraste"
+          >Modo Alto Contraste</label
+        >
+      </div>
+
+      <
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="notificaciones" />
+        <label class="form-check-label" for="notificaciones"
+          >Recibir Notificaciones</label
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="idioma">Idioma:</label>
+        <select class="form-control" id="idioma">
+          <option>Español</option>
+          <option>Inglés</option>
+        </select>
+      </div>
+
+      <button type="button" class="boton" (click)="guardarCambios()">
+        Guardar Cambios
+      </button>
+    </div>
+  </div>
+</div>

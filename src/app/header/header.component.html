@@ -1,0 +1,122 @@
+<nav class="navbar navbar-expand-lg p-2">
+  <a type="button" (click)="toggleSidebar()">
+    <img class="img-tabs" src="../../assets/tabs.svg" alt="" />
+  </a>
+
+  <a class="navbar-brand" href="#"
+    ><img class="img-logo" src="../../assets/logo-white.png" alt=""
+  /></a>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav"></ul>
+  </div>
+  <div>
+    <ul class="navbar-nav navbar-group">
+      <li class="nav-item active align-items-center">
+        <a class="nav-link" (click)="toggleCarrito()"
+          ><i class="fa-solid fa-cart-shopping"></i
+        ></a>
+      </li>
+      <li class="text-white" *ngIf="carritoService.obtenerCarrito().length > 0">
+        {{ carritoService.obtenerCarrito().length }}
+      </li>
+      <li class="nav-item active">
+        <a [routerLink]="'/login'" class="nav-link hidden-link-navbar"
+          >Log in</a
+        >
+      </li>
+      <li class="nav-item active">
+        <a [routerLink]="'/register'" class="nav-link hidden-link-navbar"
+          >Register</a
+        >
+      </li>
+      <div class="dropdown">
+        <a class="dropbtn" (click)="toggleDropdown()">
+          <img class="icon" src="../../assets/user-icon.svg" alt="" />
+        </a>
+        <div
+          class="dropdown-content"
+          *ngIf="isDropdownVisible"
+          [ngClass]="{ active: isDropdownVisible }"
+        >
+          <a [routerLink]="'/my-account'">Mi cuenta</a>
+          <a [routerLink]="'/settings'">Ajustes</a>
+          <a href="#">Cerrar sesión</a>
+        </div>
+      </div>
+    </ul>
+  </div>
+</nav>
+
+<div
+  class="offcanvas offcanvas-start bg-dark"
+  [ngClass]="{ show: showSidebar }"
+  data-bs-backdrop="static"
+  tabindex="-1"
+  id="staticBackdrop"
+  data-bs-backdrop="static"
+  tabindex="-1"
+  id="staticBackdrop"
+>
+  <div class="offcanvas-header">
+    <button
+      type="button"
+      class="btn-close btn-close-white"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+      (click)="toggleSidebar()"
+    ></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="w-50">
+      <ul class="text-sidebar">
+        <a
+          [routerLink]="'/home'"
+          class="text-decoration-none text-white"
+          (click)="toggleSidebar()"
+          >Inicio</a
+        >
+      </ul>
+      <ul class="text-sidebar">
+        <a
+          [routerLink]="'/meals'"
+          class="text-decoration-none text-white"
+          (click)="toggleSidebar()"
+          >Platos</a
+        >
+      </ul>
+      <ul class="text-sidebar">
+        <a
+          [routerLink]="'/drinks'"
+          class="text-decoration-none text-white"
+          (click)="toggleSidebar()"
+          >Bebidas</a
+        >
+      </ul>
+      <ul class="text-sidebar">
+        <a
+          [routerLink]="'/desserts'"
+          class="text-decoration-none text-white"
+          (click)="toggleSidebar()"
+          >Postres</a
+        >
+      </ul>
+      <ul class="text-sidebar hidden-link-sidebar">
+        <a
+          [routerLink]="'/login'"
+          class="text-decoration-none text-white"
+          (click)="toggleSidebar()"
+          >Iniciar sesion</a
+        >
+      </ul>
+      <ul class="text-sidebar hidden-link-sidebar">
+        <a
+          [routerLink]="'/register'"
+          class="text-decoration-none text-white"
+          (click)="toggleSidebar()"
+          >Registro</a
+        >
+      </ul>
+    </ul>
+  </div>
+</div>

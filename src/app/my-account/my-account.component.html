@@ -1,0 +1,155 @@
+<div class="container-account pt-4 pb-3">
+  <div class="row d-flex justify-content-center align-items-center w-100">
+    <div class="my-account col-md-11">
+      <h2>Mi cuenta</h2>
+
+      <div class="table-responsive">
+        <table class="table">
+          <tbody>
+            <tr>
+              <th>Email</th>
+              <td>prueba@gmail.com</td>
+            </tr>
+            <tr>
+              <th>Nombre</th>
+              <td>Pepito Perez</td>
+            </tr>
+            <tr>
+              <th>Fecha de nacimiento</th>
+              <td>03-06-1998</td>
+            </tr>
+            <tr>
+              <th>Género</th>
+              <td>Masculino</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="w-100 h-auto change-info">
+        <div class="boxes-container">
+          <div class="row">
+            <div class="col-md-6 change-box" (click)="openAddCard()">
+              <p class="text-center">Añadir tarjeta</p>
+              <img
+                class="box-img"
+                src="../../assets/add-card-icon.png"
+                alt=""
+              />
+            </div>
+            <div *ngIf="showAddCard" class="modal-overlay">
+              <div class="modal-content">
+                <h3>Añadir Tarjeta</h3>
+                <form class="card">
+                  <div class="form-field">
+                    <label for="card-number">Número de tarjeta</label>
+                    <input
+                      type="text"
+                      id="card-number"
+                      name="card-number"
+                      placeholder="1234 5678 9012 3456"
+                      required
+                    />
+                  </div>
+                  <div class="form-field">
+                    <label for="card-name">Nombre del titular</label>
+                    <input
+                      type="text"
+                      id="card-name"
+                      name="card-name"
+                      placeholder="Juan Sánchez"
+                      required
+                    />
+                  </div>
+                  <div class="form-field">
+                    <label for="card-expiry">Fecha de caducidad</label>
+                    <input
+                      type="text"
+                      id="card-expiry"
+                      name="card-expiry"
+                      placeholder="MM/AA"
+                      required
+                    />
+                  </div>
+                  <div class="form-field">
+                    <label for="card-cvv">Código de seguridad</label>
+                    <input
+                      type="text"
+                      id="card-cvv"
+                      name="card-cvv"
+                      placeholder="123"
+                      required
+                    />
+                  </div>
+                  <div class="form-button">
+                    <button class="boton" type="submit">Añadir tarjeta</button>
+                    <button class="boton m-2" (click)="closeAddCard()">
+                      Cerrar
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="col-md-6 change-box" (click)="openChangeEmail()">
+              <p class="text-center">Cambiar correo</p>
+              <img
+                class="box-img"
+                src="../../assets/change-email-icon.png"
+                alt=""
+              />
+            </div>
+            <div *ngIf="showChangeEmail" class="modal-overlay">
+              <div class="modal-content">
+                <label for="newEmail">Nuevo correo:</label>
+                <input type="email" id="newEmail" required />
+                <div
+                  class="row p-2 d-flex justify-content-center align-items-center"
+                >
+                  <button type="submit" class="col-md-5 boton m-2">
+                    Cambiar Correo
+                  </button>
+                  <button class="col-md-5 boton" (click)="closeChangeEmail()">
+                    Cerrar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 change-box" (click)="openChangePassword()">
+              <p class="text-center">Cambiar contraseña</p>
+              <img
+                class="box-img"
+                src="../../assets/change-password-icon.png"
+                alt=""
+              />
+            </div>
+            <div *ngIf="showChangePassword" class="modal-overlay">
+              <div class="modal-content">
+                <label for="newEmail">Nueva contraseña:</label>
+                <input type="email" id="newEmail" required />
+                <div
+                  class="row p-2 d-flex justify-content-center align-items-center"
+                >
+                  <button type="submit" class="col-md-5 boton m-2">
+                    Cambiar contraseña
+                  </button>
+                  <button
+                    class="col-md-5 boton"
+                    (click)="closeChangePassword()"
+                  >
+                    Cerrar
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 change-box">
+              <p class="text-center">Cerrar sesión</p>
+              <img class="box-img" src="../../assets/logout-icon.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
